@@ -13,11 +13,17 @@
 @import "../blocks/menu/_place/menu_place_header";
 
 
-
+//Buttons
+@import "../blocks/button/button";
+@import "../blocks/button/__text/button__text";
+@import "../blocks/button/_place/button_place_hero";
 
 
 // Sections (used BEM Nested file structure)
 @import "../blocks/header/_header";
+@import "../blocks/hero/_hero";
+@import "../blocks/hero/__title/hero__title";
+@import "../blocks/hero/__text/hero__text";
 
 
 .flex-row {
@@ -28,4 +34,10 @@
 .flex-column {
 	display: flex;
 	flex-direction: column;
+}
+
+.wrapper {
+	padding-left: $padding-left;
+	padding-right: $padding-right;
+
 }

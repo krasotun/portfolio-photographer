@@ -1,0 +1,15 @@
+.button_place_hero {
+	width: 220px;
+	height: 55px;
+	border: 0;
+	background-color: $color-gold;
+	color: $color-dark;
+	@extend %font-main;
+	@include font ($font-style: normal,
+		$font-weight: normal,
+		$font-size: 20px,
+		$line-height: 40px,
+	);
+	margin-top: 25px;
+
+}

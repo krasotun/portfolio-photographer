@@ -1,14 +1,13 @@
-.menu__link {
+.hero__text {
 	@extend %font-main;
-	text-decoration: none;
+	margin-top: 10px;
 	@include font ($font-style: normal,
 		$font-weight: normal,
 		$font-size: 20px,
-		$line-height: 50px,
+		$line-height: 40px,
 	);
 	color: $color-light;
-
-	&:hover {
-		color: $color-gold;
-	}
+	width: 470px;
 }
+
+;

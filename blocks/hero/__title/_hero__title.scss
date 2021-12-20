@@ -1,0 +1,12 @@
+.hero__title {
+	@extend %font-header;
+	margin: 0;
+	@include font ($font-style: normal,
+		$font-weight: bold,
+		$font-size: 60px,
+		$line-height: 120px,
+	);
+	color: $color-light;
+}
+
+;
