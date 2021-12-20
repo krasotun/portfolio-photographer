@@ -1,0 +1,13 @@
+* {
+	background-color: $color-background;
+}
+
+h1 {
+	@extend %font-header;
+	font-size: 15px;
+}
+
+p {
+	@extend %font-header;
+	font-size: 155px;
+}

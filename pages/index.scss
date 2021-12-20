@@ -1,0 +1,9 @@
+// Abstract (importing variablex, mixins, placeholders etc.
+@import "../abstract/_constants";
+@import "../abstract/_mixins";
+@import "../abstract/_placeholders";
+
+
+
+// Blocks (used BEM Nested file structure)
+@import "../blocks/header/header";

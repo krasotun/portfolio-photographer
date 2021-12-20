@@ -1,0 +1,13 @@
+{
+    "version": 3,
+    "mappings": "AIIA,ADFA,ECEE,CAKF,CAAC,ADPY,CACZ,WAAW,CAAE,qCAEF,CACX,ACND,AAAA,CAAC,AAAC,CACD,gBAAgB,CHDC,GAAG,CGEpB,AAED,AAAA,EAAE,AAAC,CAEF,SAAS,CAAE,IAAI,CACf,AAED,AAAA,CAAC,AAAC,CAED,SAAS,CAAE,KAAK,CAChB",
+    "sources": [
+        "index.scss",
+        "../abstract/_constants.scss",
+        "../abstract/_mixins.scss",
+        "../abstract/_placeholders.scss",
+        "../blocks/header/header.scss"
+    ],
+    "names": [],
+    "file": "index.min.css"
+}
