@@ -5,5 +5,27 @@
 
 
 
-// Blocks (used BEM Nested file structure)
-@import "../blocks/header/header";
+// Menu (used BEM Nested file structure)
+@import "../blocks/menu/menu";
+@import "../blocks/menu/__link/menu__link";
+@import "../blocks/menu/__list/menu__list";
+@import "../blocks/menu/__list-item/menu__list-item";
+@import "../blocks/menu/_place/menu_place_header";
+
+
+
+
+
+// Sections (used BEM Nested file structure)
+@import "../blocks/header/_header";
+
+
+.flex-row {
+	display: flex;
+	flex-direction: row;
+}
+
+.flex-column {
+	display: flex;
+	flex-direction: column;
+}

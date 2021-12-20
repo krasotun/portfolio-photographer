@@ -1,0 +1,8 @@
+/// @include ///
+
+@mixin font ($font-size, $font-weight, $line-height, $font-style) {
+	font-size: $font-size;
+	font-weight: $font-weight;
+	line-height: $line-height;
+	font-style: $font-style;
+}

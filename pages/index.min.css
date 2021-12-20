@@ -1,2 +1,43 @@
-h1,p{font-family:"Merriweather", Verdana, sans-serif}*{background-color:red}h1{font-size:15px}p{font-size:155px}
-/*# sourceMappingURL=index.min.css.map */
+.menu__link {
+  font-family: "Inter", Verdana, sans-serif;
+}
+.menu__link {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 50px;
+  font-style: normal;
+  color: #fff;
+}
+.menu__list-item {
+  margin-right: 30px;
+}
+.menu__list-item:last-child {
+  margin-right: 0;
+}
+.header {
+  background-color: #000;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.flex-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+.flex-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}

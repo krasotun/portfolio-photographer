@@ -1,0 +1,10 @@
+.menu__link {
+	@extend %font-main;
+	text-decoration: none;
+	@include font ($font-style: normal,
+		$font-weight: normal,
+		$font-size: 20px,
+		$line-height: 50px,
+	);
+	color: $color-light;
+}
