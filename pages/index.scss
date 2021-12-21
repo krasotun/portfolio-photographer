@@ -7,6 +7,9 @@
 @import "../blocks/flex/_flex";
 @import "../blocks/flex/_direction/flex_direction-column";
 @import "../blocks/flex/_direction/flex_direction-row";
+@import "../blocks/flex/_wrap/flex_wrap-wrap";
+@import "../blocks/flex/_wrap/flex_wrap-nowrap";
+
 
 //Wrapper
 @import "../blocks/wrapper/_wrapper";
@@ -47,14 +50,3 @@
 @import "../blocks/skills/__image/skills__image";
 @import "../blocks/skills/__subtitle/skills__subtitle";
 @import "../blocks/skills/__text/skills__text";
-
-
-.flex-row {
-	display: flex;
-	flex-direction: row;
-}
-
-.flex-column {
-	display: flex;
-	flex-direction: column;
-}
