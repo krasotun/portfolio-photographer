@@ -3,6 +3,17 @@
 @import "../abstract/_mixins";
 @import "../abstract/_placeholders";
 
+//Flex
+@import "../blocks/flex/_flex";
+@import "../blocks/flex/_direction/flex_direction-column";
+@import "../blocks/flex/_direction/flex_direction-row";
+
+//Wrapper
+@import "../blocks/wrapper/_wrapper";
+@import "../blocks/wrapper/_color/_wrapper_color-dark";
+@import "../blocks/wrapper/_paddings/_wrapper_paddings-sides";
+@import "../blocks/wrapper/_paddings/_wrapper_paddings-top";
+
 
 
 // Menu (used BEM Nested file structure)
@@ -38,11 +49,6 @@
 @import "../blocks/skills/__text/skills__text";
 
 
-
-
-
-
-
 .flex-row {
 	display: flex;
 	flex-direction: row;
@@ -51,11 +57,4 @@
 .flex-column {
 	display: flex;
 	flex-direction: column;
-}
-
-.wrapper {
-	padding-left: $padding-left;
-	padding-right: $padding-right;
-	background-color: black;
-
 }
