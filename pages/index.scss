@@ -12,6 +12,10 @@
 @import "../blocks/menu/__list-item/menu__list-item";
 @import "../blocks/menu/_place/menu_place_header";
 
+// Section
+@import "../blocks/section/section";
+@import "../blocks/section/__title/section__title";
+
 
 //Buttons
 @import "../blocks/button/button";
@@ -21,9 +25,22 @@
 
 // Sections (used BEM Nested file structure)
 @import "../blocks/header/_header";
+
 @import "../blocks/hero/_hero";
 @import "../blocks/hero/__title/hero__title";
 @import "../blocks/hero/__text/hero__text";
+
+@import "../blocks/skills/skills";
+@import "../blocks/skills/__content-wrapper/skills__content-wrapper";
+@import "../blocks/skills/__content-cell/skills__content-cell";
+@import "../blocks/skills/__image/skills__image";
+@import "../blocks/skills/__subtitle/skills__subtitle";
+@import "../blocks/skills/__text/skills__text";
+
+
+
+
+
 
 
 .flex-row {
