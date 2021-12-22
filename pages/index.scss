@@ -33,8 +33,22 @@
 
 //Buttons
 @import "../blocks/button/button";
+@import "../blocks/button/_color/button_color-dark";
+@import "../blocks/button/_color/button_color-gold";
+@import "../blocks/button/_place/button_place-hero";
+@import "../blocks/button/_place/button_place-portfolio";
+@import "../blocks/button/_size/button_size-small";
+@import "../blocks/button/_size/button_size-normal";
+@import "../blocks/button/_size/button_size-large";
 @import "../blocks/button/__text/button__text";
-@import "../blocks/button/_place/button_place_hero";
+@import "../blocks/button/__text/_color/button__text_color-dark";
+@import "../blocks/button/__text/_color/button__text_color-light";
+@import "../blocks/button/__text/_color/button__text_color-gold";
+
+
+
+
+
 
 
 // Sections (used BEM Nested file structure)
@@ -50,3 +64,9 @@
 @import "../blocks/skills/__image/skills__image";
 @import "../blocks/skills/__subtitle/skills__subtitle";
 @import "../blocks/skills/__text/skills__text";
+
+@import "../blocks/portfolio/_portfolio";
+@import "../blocks/portfolio/__image/portfolio__image";
+
+@import "../blocks/portfolio/__buttons-wrapper/portfolio__buttons-wrapper";
+@import "../blocks/portfolio/__gallery-wrapper/portfolio__gallery-wrapper";

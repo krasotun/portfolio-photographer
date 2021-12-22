@@ -1,3 +1,9 @@
 .button__text {
 	margin: auto;
+	@extend %font-main;
+	@include font ($font-style: normal,
+		$font-weight: normal,
+		$font-size: 20px,
+		$line-height: 40px,
+	);
 }
