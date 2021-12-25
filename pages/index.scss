@@ -10,14 +10,11 @@
 @import "../blocks/flex/_wrap/flex_wrap-wrap";
 @import "../blocks/flex/_wrap/flex_wrap-nowrap";
 
-
 //Wrapper
 @import "../blocks/wrapper/_wrapper";
 @import "../blocks/wrapper/_color/_wrapper_color-dark";
 @import "../blocks/wrapper/_paddings/_wrapper_paddings-sides";
 @import "../blocks/wrapper/_paddings/_wrapper_paddings-top";
-
-
 
 // Menu (used BEM Nested file structure)
 @import "../blocks/menu/menu";
@@ -29,7 +26,6 @@
 // Section
 @import "../blocks/section/section";
 @import "../blocks/section/__title/section__title";
-
 
 //Buttons
 @import "../blocks/button/button";
@@ -44,12 +40,6 @@
 @import "../blocks/button/__text/_color/button__text_color-dark";
 @import "../blocks/button/__text/_color/button__text_color-light";
 @import "../blocks/button/__text/_color/button__text_color-gold";
-
-
-
-
-
-
 
 // Sections (used BEM Nested file structure)
 @import "../blocks/header/_header";
@@ -67,6 +57,13 @@
 
 @import "../blocks/portfolio/_portfolio";
 @import "../blocks/portfolio/__image/portfolio__image";
-
 @import "../blocks/portfolio/__buttons-wrapper/portfolio__buttons-wrapper";
 @import "../blocks/portfolio/__gallery-wrapper/portfolio__gallery-wrapper";
+
+@import "../blocks/price/_price";
+@import "../blocks/price/__ammount/price__ammount";
+@import "../blocks/price/__cell/price__cell";
+@import "../blocks/price/__content-wrapper/price__content-wrapper";
+@import "../blocks/price/__list/price__list";
+@import "../blocks/price/__offer-text/price__offer-text";
+@import "../blocks/price/__subtitle/price__subtitle";
