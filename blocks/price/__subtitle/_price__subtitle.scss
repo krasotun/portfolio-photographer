@@ -1,0 +1,12 @@
+.price__subtitle {
+	@extend %font-header;
+	margin: 43px 0 0 0;
+	@include font ($font-style: normal,
+		$font-weight: bold,
+		$font-size: 28px,
+		$line-height: 56px,
+	);
+	color: $color-light;
+}
+
+;

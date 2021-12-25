@@ -1,0 +1,10 @@
+.price__list {
+	list-style-type: none;
+	@extend %font-main;
+	@include font ($font-style: normal,
+		$font-weight: normal,
+		$font-size: 18px,
+		$line-height: 36px,
+	);
+	color: $color-light;
+}
