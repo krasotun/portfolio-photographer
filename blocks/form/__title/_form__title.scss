@@ -1,0 +1,13 @@
+.form__title {
+	color: $color-gold;
+	margin-left: -10px;
+	@extend %font-header;
+	@include font ($font-style: normal,
+		$font-weight: bold,
+		$font-size: 40px,
+		$line-height: 80px,
+	);
+	width: 450px;
+	text-align: left;
+
+}

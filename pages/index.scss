@@ -44,6 +44,21 @@
 @import "../blocks/button/__text/_color/button__text_color-light";
 @import "../blocks/button/__text/_color/button__text_color-gold";
 
+// Form
+
+@import "../blocks/form/form";
+@import "../blocks/form/__input-container/form__input-container";
+@import "../blocks/form/__handlers/form__handlers";
+@import "../blocks/form/__label/form__label";
+@import "../blocks/form/__item/form__item";
+@import "../blocks/form/__item/_el/form__item_el-message";
+@import "../blocks/form/__item/_el/form__item_el-text";
+@import "../blocks/form/__item/_el/form__item_el-email";
+@import "../blocks/form/__title/form__title";
+@import "../blocks/form/__main-container/form__main-container";
+
+
+
 // Sections (used BEM Nested file structure)
 @import "../blocks/header/_header";
 
@@ -71,102 +86,4 @@
 @import "../blocks/price/__offer-text/price__offer-text";
 @import "../blocks/price/__subtitle/price__subtitle";
 
-.form__input-container {
-	border: 0;
-	padding: 0;
-}
-
-.form__handlers {
-	border: 0;
-	padding: 0;
-}
-
-.form__label {
-	display: block;
-
-}
-
-.form__item {
-	background: rgba(0, 0, 0, 0.5);
-	border: 2px solid $color-gold;
-	box-sizing: border-box;
-	border-radius: 0px;
-	width: 450px;
-	height: 50px;
-	color: $color-gold;
-	@extend %font-main;
-	@include font ($font-style: normal,
-		$font-weight: normal,
-		$font-size: 20px,
-		$line-height: 40px,
-	);
-
-	&::placeholder {
-		color: $color-gold;
-		@extend %font-main;
-		@include font ($font-style: normal,
-			$font-weight: normal,
-			$font-size: 20px,
-			$line-height: 40px,
-		);
-	}
-
-	&:focus {
-		outline-color: $color-dark;
-	}
-
-
-}
-
-.form__item_el_message {
-	height: 100px;
-}
-
-.form__label {
-	margin: 10px 0;
-	color: $color-gold;
-	@extend %font-main;
-	@include font ($font-style: normal,
-		$font-weight: normal,
-		$font-size: 20px,
-		$line-height: 40px,
-	);
-}
-
-.form__title {
-	color: $color-gold;
-	margin-left: -10px;
-	@extend %font-header;
-	@include font ($font-style: normal,
-		$font-weight: bold,
-		$font-size: 40px,
-		$line-height: 80px,
-	);
-	width: 450px;
-	text-align: left;
-
-}
-
-.contacts {
-	background-color: $color-dark;
-}
-
-
-.form__main-container {
-	margin-top: 45px;
-
-}
-
-.form__main-container {
-	align-items: flex-end;
-	padding: 0;
-}
-
-.contacts {
-	min-height: 970px;
-	background-image: url(../../img/bg/bg-contacts.png);
-	background-size: cover;
-	background-repeat: no-repeat;
-	padding-top: 60px;
-
-}
+@import "../blocks/contacts/contacts";
