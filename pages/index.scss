@@ -3,6 +3,9 @@
 @import "../abstract/_mixins";
 @import "../abstract/_placeholders";
 
+// Page
+@import "../blocks/page/_page";
+
 //Flex
 @import "../blocks/flex/_flex";
 @import "../blocks/flex/_direction/flex_direction-column";
@@ -12,7 +15,7 @@
 
 //Wrapper
 @import "../blocks/wrapper/_wrapper";
-@import "../blocks/wrapper/_color/_wrapper_color-dark";
+@import "../blocks/wrapper/_color/_wrapper_color_dark";
 @import "../blocks/wrapper/_paddings/_wrapper_paddings-sides";
 @import "../blocks/wrapper/_paddings/_wrapper_paddings-top";
 
