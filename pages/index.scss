@@ -8,16 +8,14 @@
 
 //Flex
 @import "../blocks/flex/_flex";
-@import "../blocks/flex/_direction/flex_direction-column";
-@import "../blocks/flex/_direction/flex_direction-row";
 @import "../blocks/flex/_wrap/flex_wrap-wrap";
 @import "../blocks/flex/_wrap/flex_wrap-nowrap";
 
 //Wrapper
 @import "../blocks/wrapper/_wrapper";
 @import "../blocks/wrapper/_color/_wrapper_color_dark";
-@import "../blocks/wrapper/_paddings/_wrapper_paddings-sides";
-@import "../blocks/wrapper/_paddings/_wrapper_paddings-top";
+@import "../blocks/wrapper/_paddings/_wrapper_paddings_sides";
+@import "../blocks/wrapper/_paddings/_wrapper_paddings_top";
 
 // Menu (used BEM Nested file structure)
 @import "../blocks/menu/menu";
@@ -33,17 +31,17 @@
 //Buttons
 @import "../blocks/button/button";
 @import "../blocks/button/_color/button_color-dark";
-@import "../blocks/button/_color/button_color-gold";
-@import "../blocks/button/_place/button_place-hero";
+@import "../blocks/button/_color/button_color_gold";
+@import "../blocks/button/_place/button_place_hero";
 @import "../blocks/button/_place/button_place-portfolio";
 @import "../blocks/button/_place/button_place-price";
 @import "../blocks/button/_place/button_place-contacts";
 
 @import "../blocks/button/_size/button_size-small";
-@import "../blocks/button/_size/button_size-normal";
+@import "../blocks/button/_size/button_size_normal";
 @import "../blocks/button/_size/button_size-large";
 @import "../blocks/button/__text/button__text";
-@import "../blocks/button/__text/_color/button__text_color-dark";
+@import "../blocks/button/__text/_color/button__text_color_dark";
 @import "../blocks/button/__text/_color/button__text_color-light";
 @import "../blocks/button/__text/_color/button__text_color-gold";
 
