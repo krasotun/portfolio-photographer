@@ -76,7 +76,7 @@
 
 @import "../blocks/portfolio/_portfolio";
 @import "../blocks/portfolio/__image/portfolio__image";
-@import "../blocks/portfolio/__buttons-wrapper/portfolio__buttons-wrapper";
+@import "../blocks/portfolio/__tabs-wrapper/portfolio__tabs-wrapper";
 @import "../blocks/portfolio/__gallery-wrapper/portfolio__gallery-wrapper";
 
 @import "../blocks/price/_price";
@@ -95,3 +95,8 @@
 @import "../blocks/footer/__subtitle/footer__subtitle";
 @import "../blocks/footer/__social-icons/footer__social-icons";
 @import "../blocks/footer/__social-icon/footer__social-icon";
+
+
+@import "../blocks/tab/tab";
+@import "../blocks/tab/_active/tab_active";
+@import "../blocks/tab/_place/tab_place_portfolio";

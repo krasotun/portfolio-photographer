@@ -1,0 +1,19 @@
+.tab {
+  box-sizing: border-box;
+  border: 2px solid $color-gold;
+  justify-content: center;
+  width: 220px;
+  height: 55px;
+  color: $color-gold;
+  text-align: center;
+  @extend %font-main;
+  @include font ($font-style: normal,
+    $font-weight: normal,
+    $font-size: 20px,
+    $line-height: 40px,
+  );
+
+  &:hover {
+    cursor: pointer;
+  }
+}

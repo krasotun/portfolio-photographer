@@ -85,35 +85,22 @@
         wrapper wrapper_paddings_sides wrapper_paddings_top wrapper_color_dark
       ">
       <h2 class="section__title">Portfolio</h2>
-      <div class="portfolio__buttons-wrapper flex ">
-        <button class="
-                    button button_color_gold button_size_normal button_place_portfolio
-                    flex flex_column
-                  ">
-          <p class="button__text button__text_color_dark">All</p>
-        </button>
-        <button class="
-            button button_color_dark button_size_normal button_place_portfolio
-            flex flex_column
-          ">
-          <p class="button__text button__text_color_gold">Winter</p>
-        </button>
-        <button class="button button_color_dark button_size_normal button_place_portfolio
-            flex flex_column
-          ">
-          <p class=" button__text button__text_color_gold">Spring</p>
-        </button>
-        <button class="button button_color_dark button_size_normal button_place_portfolio
-            flex flex_column
-          ">
-          <p class=" button__text button__text_color_gold">Summer</p>
-        </button>
-        <button class="
-            button button_color_dark button_size_normal button_place_portfolio
-            flex flex_column
-          ">
-          <p class="button__text button__text_color_gold">Autumn</p>
-        </button>
+      <div class="portfolio__tabs-wrapper flex ">
+        <div class="tab tab_active tab_place_portfolio flex flex_column">
+          All
+        </div>
+        <div class="tab tab_place_portfolio flex flex_column">
+          Winter
+        </div>
+        <div class="tab tab_place_portfolio flex flex_column">
+          Spring
+        </div>
+        <div class="tab tab_place_portfolio flex flex_column">
+          Summer
+        </div>
+        <div class="tab tab_place_portfolio flex flex_column">
+          Autumn
+        </div>
       </div>
       <div class="
           portfolio__gallery-wrapper
@@ -221,6 +208,7 @@
       <img src="img/logo/pinterest.svg" alt="Pinterest logo" class="footer__social-icon">
     </div>
   </footer>
+  <script src="scripts/index.js"></script>
 </body>
 
 </html>
