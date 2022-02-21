@@ -2,4 +2,15 @@
   border: none;
   background-color: $color-gold;
   color: $color-dark;
+  animation: show .5s;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
