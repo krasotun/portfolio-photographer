@@ -1,6 +1,10 @@
 .portfolio__image {
   cursor: pointer;
 
+  &_hidden {
+    display: none;
+  }
+
   &:hover {
     opacity: .7;
     transition: 1s;
