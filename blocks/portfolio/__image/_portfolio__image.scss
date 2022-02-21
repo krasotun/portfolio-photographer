@@ -1,6 +1,8 @@
 .portfolio__image {
-	&:hover {
-		opacity: .7;
-		transition: 1s;
-	}
+  cursor: pointer;
+
+  &:hover {
+    opacity: .7;
+    transition: 1s;
+  }
 }
