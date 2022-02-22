@@ -1,12 +1,25 @@
 .portfolio__image {
   cursor: pointer;
+  animation: show 2s;
+  overflow: hidden;
+
 
   &_hidden {
     display: none;
   }
 
   &:hover {
-    opacity: .7;
+    transform: scale(1.05);
     transition: 1s;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
