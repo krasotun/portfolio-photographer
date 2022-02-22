@@ -1,23 +1,27 @@
 // Работа с табами
+
 // Выбираем контейнер с картинками
 const imagesContainer = document.querySelector('.portfolio__gallery-wrapper');
-// Создаем картинку
-const portfolioImage = document.createElement('img');
 
 // Наполняем картинку
 const createPortfolioImage = function (name, link, alt) {
+  const portfolioImage = document.createElement('img');
   portfolioImage.dataset.name = name;
   portfolioImage.src = link;
   portfolioImage.alt = alt;
   portfolioImage.classList.add('portfolio__image');
+  return portfolioImage;
 };
 
-// Вставляем картинку на сайт
-const appendPortfolioImage = function () {
-  imagesContainer.prepend(portfolioImage);
+// Вставояем картинки из массива на сайт
+const firstAddImages = function () {
+  imagesArray.forEach((item) => {
+    const newImage = createPortfolioImage(item.name, item.link, item.alt);
+    console.log(newImage);
+    imagesContainer.append(newImage);
+  });
 };
-createPortfolioImage(imagesArray[0].name, imagesArray[0].link, imagesArray[0].alt);
-appendPortfolioImage();
+firstAddImages();
 
 // Выбираем контейнер с табами
 const tabsContainer = document.querySelector('.portfolio__tabs-wrapper');
@@ -35,6 +39,7 @@ const hideAllImages = function () {
     image.classList.add('portfolio__image_hidden');
   });
 };
+
 
 // Показываем все картинки на странице
 const showAllImages = function () {
