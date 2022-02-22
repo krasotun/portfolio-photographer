@@ -1,5 +1,7 @@
 .button {
-	&:hover {
-		cursor: pointer;
-	}
+  &:hover {
+    cursor: pointer;
+    color: $color-light;
+    opacity: .6;
+  }
 }
