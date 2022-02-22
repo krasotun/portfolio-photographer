@@ -75,3 +75,30 @@ const removeActiveTabs = function () {
     }
   });
 };
+
+
+// Работа с поп-апами
+
+// Поп-ап с формой для контактов
+const togglePopup = function (popupName) {
+  popupName.classList.toggle('popup_opened');
+};
+
+const popupForm = document.querySelector('.popup-form');
+const buttonClosePopupForm = document.querySelector('.popup-form__close');
+const buttonHeroSection = document.querySelector('.button_place_hero');
+const priceSection = document.querySelector('.price__content-wrapper');
+
+buttonHeroSection.addEventListener('click', () => {
+  togglePopup(popupForm);
+});
+
+buttonClosePopupForm.addEventListener('click', () => {
+  togglePopup(popupForm);
+});
+
+priceSection.addEventListener('click', (evt) => {
+  if (evt.target.classList.contains('button_place_price')) {
+    togglePopup(popupForm);
+  }
+});
