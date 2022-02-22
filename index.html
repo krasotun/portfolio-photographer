@@ -175,6 +175,30 @@
       <img src="img/logo/pinterest.svg" alt="Pinterest logo" class="footer__social-icon">
     </div>
   </footer>
+
+  <section class="popup popup-form">
+    <div class="popup-form__container flex flex_column">
+      <form class="form form_place_popup" method="POST">
+        <fieldset class="form__input-container">
+          <label class="form__label" for="email">E-mail</label>
+          <input required class="form__item form__item_el_email" id="email" mane="email" type="email"
+            placeholder="hello@example.com">
+          <label class="form__label" for="tel">Tel.</label>
+          <input required class="form__item form__item_el_tel" id="tel" type="tel" name="tel"
+            placeholder="+7(999)123-45-67">
+          <label class="form__label" for="message">Your message</label>
+          <textarea class="form__item form__item_el_message" id="message" name="message"
+            placeholder="Hello,Alexa! How are you? Let's talk about shooting on next week?"></textarea>
+        </fieldset>
+        <fieldset class="form__handlers">
+          <button type="submit" class="button button_color_gold button_size_normal button_place_popup flex flex_column">
+            <p class="button__text button__text_color_dark">Contact me</p>
+          </button>
+        </fieldset>
+      </form>
+    </div>
+  </section>
+
   <script src="scripts/imagesArray.js"></script>
   <script src="scripts/index.js"></script>
 </body>

@@ -1,0 +1,13 @@
+.popup-form__container {
+  outline: 1px red solid;
+  width: 530px;
+  background: $color-dark;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  align-items: center;
+  box-sizing: border-box;
+  text-align: center;
+}

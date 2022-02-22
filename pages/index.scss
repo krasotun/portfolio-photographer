@@ -36,6 +36,7 @@
 @import "../blocks/button/_place/button_place_portfolio";
 @import "../blocks/button/_place/button_place_price";
 @import "../blocks/button/_place/button_place_contacts";
+@import "../blocks/button/_place/button_place_popup";
 
 @import "../blocks/button/_size/button_size-small";
 @import "../blocks/button/_size/button_size_normal";
@@ -48,6 +49,8 @@
 // Form
 
 @import "../blocks/form/form";
+
+
 @import "../blocks/form/__input-container/form__input-container";
 @import "../blocks/form/__handlers/form__handlers";
 @import "../blocks/form/__label/form__label";
@@ -100,3 +103,8 @@
 @import "../blocks/tab/tab";
 @import "../blocks/tab/_active/tab_active";
 @import "../blocks/tab/_place/tab_place_portfolio";
+
+
+@import "../blocks/popup/popup";
+@import "../blocks/popup-form/popup-form";
+@import "../blocks/popup-form/__container/popup-form__container";

@@ -1,31 +1,32 @@
 .form__item {
-	background: rgba(0, 0, 0, 0.5);
-	border: 2px solid $color-gold;
-	box-sizing: border-box;
-	border-radius: 0px;
-	width: 450px;
-	height: 50px;
-	color: $color-gold;
-	@extend %font-main;
-	@include font ($font-style: normal,
-		$font-weight: normal,
-		$font-size: 20px,
-		$line-height: 40px,
-	);
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid $color-gold;
+  box-sizing: border-box;
+  border-radius: 0px;
+  width: 450px;
+  height: 50px;
+  color: $color-gold;
+  @extend %font-main;
+  @include font ($font-style: normal,
+    $font-weight: normal,
+    $font-size: 20px,
+    $line-height: 40px,
+  );
 
-	&::placeholder {
-		color: $color-gold;
-		@extend %font-main;
-		@include font ($font-style: normal,
-			$font-weight: normal,
-			$font-size: 20px,
-			$line-height: 40px,
-		);
-	}
+  &::placeholder {
+    opacity: .8;
+    color: $color-gold;
+    @extend %font-main;
+    @include font ($font-style: normal,
+      $font-weight: normal,
+      $font-size: 20px,
+      $line-height: 40px,
+    );
+  }
 
-	&:focus {
-		outline-color: $color-dark;
-	}
+  &:focus {
+    outline-color: $color-dark;
+  }
 
 
 }
