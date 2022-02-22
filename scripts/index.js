@@ -17,7 +17,6 @@ const createPortfolioImage = function (name, link, alt) {
 const firstAddImages = function () {
   imagesArray.forEach((item) => {
     const newImage = createPortfolioImage(item.name, item.link, item.alt);
-    console.log(newImage);
     imagesContainer.append(newImage);
   });
 };
@@ -32,22 +31,12 @@ const portfolioTabs = tabsContainer.querySelectorAll('.tab');
 // Выбираем картинки из контейнера
 const portfolioImages = imagesContainer.querySelectorAll('.portfolio__image');
 
-
 // Скрываем все картинки на странице
 const hideAllImages = function () {
-  portfolioImages.forEach(image => {
-    image.classList.add('portfolio__image_hidden');
+  imagesContainer.querySelectorAll('.portfolio__image').forEach(image => {
+    image.remove();
   });
 };
-
-
-// Показываем все картинки на странице
-const showAllImages = function () {
-  portfolioImages.forEach(image => {
-    image.classList.remove('portfolio__image_hidden');
-  });
-};
-
 
 // Показ изображений по тегу
 const selectImagesFromPortfolio = function () {
@@ -56,14 +45,18 @@ const selectImagesFromPortfolio = function () {
       let clickedTag = evt.target;
       removeActiveTabs(); // Убираем со всех табов активный
       togglePortfolioTag(clickedTag); // Меняем вид таба
-      hideAllImages(); // Скрываем все картинки
-      portfolioImages.forEach(image => {
-        if (image.dataset.name === clickedTag.innerText) {
-          image.classList.remove('portfolio__image_hidden');
-        } else if (clickedTag.innerText === 'All') {
-          showAllImages();
-        }
-      });
+      if (clickedTag.innerText === 'All') {
+        hideAllImages();
+        firstAddImages();
+      } else {
+        hideAllImages();
+        firstAddImages();
+        imagesContainer.querySelectorAll('.portfolio__image').forEach(image => {
+          if (clickedTag.innerText != image.dataset.name) {
+            image.remove();
+          }
+        });
+      }
     }
   });
 };
