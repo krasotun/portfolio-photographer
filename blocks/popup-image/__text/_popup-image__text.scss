@@ -1,0 +1,10 @@
+	.popup-image__text {
+	  margin-top: 20px;
+	  @extend %font-main;
+	  color: $color-light;
+	  @include font ($font-style: normal,
+	    $font-weight: normal,
+	    $font-size: 16px,
+	    $line-height: 36px,
+	  );
+	}
