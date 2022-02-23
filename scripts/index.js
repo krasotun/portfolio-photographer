@@ -1,4 +1,13 @@
-// Работа с табами
+// Поп-ап с формой для контактов
+const togglePopup = function (popupName) {
+  popupName.classList.toggle('popup_opened');
+};
+
+// Папап по клику на картинку
+
+const popupImage = document.querySelector('.popup-image');
+const popupImageImage = popupImage.querySelector('.popup-image__image');
+const popupImageText = popupImage.querySelector('.popup-image__text');
 
 // Выбираем контейнер с картинками
 const imagesContainer = document.querySelector('.portfolio__gallery-wrapper');
@@ -10,6 +19,10 @@ const createPortfolioImage = function (name, link, alt) {
   portfolioImage.src = link;
   portfolioImage.alt = alt;
   portfolioImage.classList.add('portfolio__image');
+  portfolioImage.addEventListener('click', () => {
+    showPopupImage(portfolioImage);
+    togglePopup(popupImage);
+  });
   return portfolioImage;
 };
 
@@ -36,6 +49,12 @@ const hideAllImages = function () {
   imagesContainer.querySelectorAll('.portfolio__image').forEach(image => {
     image.remove();
   });
+};
+
+// Показываем попап с картинкой
+const showPopupImage = function (image) {
+  popupImageImage.src = image.src;
+  popupImageText.textContent = image.dataset.name;
 };
 
 // Показ изображений по тегу
@@ -76,18 +95,13 @@ const removeActiveTabs = function () {
   });
 };
 
-
 // Работа с поп-апами
-
-// Поп-ап с формой для контактов
-const togglePopup = function (popupName) {
-  popupName.classList.toggle('popup_opened');
-};
-
 const popupForm = document.querySelector('.popup-form');
 const buttonClosePopupForm = document.querySelector('.popup-form__close');
+const buttonClosePopupImage = document.querySelector('.popup-image__close');
 const buttonHeroSection = document.querySelector('.button_place_hero');
 const priceSection = document.querySelector('.price__content-wrapper');
+
 
 buttonHeroSection.addEventListener('click', () => {
   togglePopup(popupForm);
@@ -95,6 +109,10 @@ buttonHeroSection.addEventListener('click', () => {
 
 buttonClosePopupForm.addEventListener('click', () => {
   togglePopup(popupForm);
+});
+
+buttonClosePopupImage.addEventListener('click', () => {
+  togglePopup(popupImage);
 });
 
 priceSection.addEventListener('click', (evt) => {
