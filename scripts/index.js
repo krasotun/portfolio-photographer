@@ -20,7 +20,8 @@ const createPortfolioImage = function (name, link, alt) {
   portfolioImage.alt = alt;
   portfolioImage.classList.add('portfolio__image');
   portfolioImage.addEventListener('click', () => {
-    addSliderBlock();
+    createSliderBlock('Имя картинки', 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg',
+      'Альт картинки', 'Winter');
     /* showPopupImage(portfolioImage); */
     togglePopup(popupImage);
   });
@@ -36,7 +37,6 @@ const firstAddImages = function () {
 };
 firstAddImages();
 
-
 // Слайдер
 // Логика
 // Вставляем в попап картинки из выбранного тега (копипуем с массивом)
@@ -46,36 +46,33 @@ firstAddImages();
 // Тогглим класс hidded
 // Если дошли до первой - меняем на последнюю
 
-
-// Выбираем шаблон (template) карточки
-const sliderTemplate = document.querySelector('#slider-template').content;
-console.log(sliderTemplate);
+// Выбираем контейнер для вставки
+const popupImageContainer = document.querySelector('.popup-image__container');
 
 // Создаем блок с картинками для вставки в поп-ап
-const createSliderBlock = function (name, link, alt) {
-  const sliderBlock = sliderTemplate.querySelector('.popup-image__container').cloneNode(true);
+const createSliderBlock = function (name, link, alt, data) {
   const sliderBlockImage = document.createElement('img');
   const sliderBlockText = document.createElement('p');
   sliderBlockText.textContent = name;
   sliderBlockImage.src = link;
-  sliderBlockText.alt = alt;
+  sliderBlockImage.alt = alt;
+  sliderBlockImage.dataset.name = data;
   sliderBlockImage.classList.add('popup-image__image');
   sliderBlockText.classList.add('popup-image__text');
-  return sliderBlock;
+  popupImageContainer.append(sliderBlockImage);
+  popupImageContainer.append(sliderBlockText);
 };
-
-// Выбираем контейнер для вставки
-const popupImageContainer = document.querySelector('.popup-image__container');
 
 
 // Вставляем блок с картинками в попап
-const addSliderBlock = function () {
+/* const addSliderBlock = function () {
   imagesContainer.querySelectorAll('.portfolio__image').forEach(image => {
+
     const sliderBlockForAdding = createSliderBlock(image.dataset.name, image.src, image.alt);
-    console.log(sliderBlockForAdding);
-    popupImage.append(sliderBlockForAdding);
+
+    popupImageContainer.append(sliderBlockForAdding);
   });
-};
+}; */
 
 // Выбираем контейнер с табами
 const tabsContainer = document.querySelector('.portfolio__tabs-wrapper');
