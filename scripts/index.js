@@ -12,7 +12,7 @@ const popupImageText = popupImage.querySelector('.popup-image__text');
 // Выбираем контейнер с картинками
 const imagesContainer = document.querySelector('.portfolio__gallery-wrapper');
 
-// Наполняем картинку
+// Наполняем картинку для портфолио
 const createPortfolioImage = function (name, link, alt) {
   const portfolioImage = document.createElement('img');
   portfolioImage.dataset.name = name;
@@ -20,13 +20,12 @@ const createPortfolioImage = function (name, link, alt) {
   portfolioImage.alt = alt;
   portfolioImage.classList.add('portfolio__image');
   portfolioImage.addEventListener('click', () => {
-    showPopupImage(portfolioImage);
+    addSliderBlock();
+    /* showPopupImage(portfolioImage); */
     togglePopup(popupImage);
   });
   return portfolioImage;
 };
-
-
 
 // Вставояем картинки из массива на сайт
 const firstAddImages = function () {
@@ -36,6 +35,47 @@ const firstAddImages = function () {
   });
 };
 firstAddImages();
+
+
+// Слайдер
+// Логика
+// Вставляем в попап картинки из выбранного тега (копипуем с массивом)
+// Next
+// Тогглим класс hidded
+// Prev
+// Тогглим класс hidded
+// Если дошли до первой - меняем на последнюю
+
+
+// Выбираем шаблон (template) карточки
+const sliderTemplate = document.querySelector('#slider-template').content;
+console.log(sliderTemplate);
+
+// Создаем блок с картинками для вставки в поп-ап
+const createSliderBlock = function (name, link, alt) {
+  const sliderBlock = sliderTemplate.querySelector('.popup-image__container').cloneNode(true);
+  const sliderBlockImage = document.createElement('img');
+  const sliderBlockText = document.createElement('p');
+  sliderBlockText.textContent = name;
+  sliderBlockImage.src = link;
+  sliderBlockText.alt = alt;
+  sliderBlockImage.classList.add('popup-image__image');
+  sliderBlockText.classList.add('popup-image__text');
+  return sliderBlock;
+};
+
+// Выбираем контейнер для вставки
+const popupImageContainer = document.querySelector('.popup-image__container');
+
+
+// Вставляем блок с картинками в попап
+const addSliderBlock = function () {
+  imagesContainer.querySelectorAll('.portfolio__image').forEach(image => {
+    const sliderBlockForAdding = createSliderBlock(image.dataset.name, image.src, image.alt);
+    console.log(sliderBlockForAdding);
+    popupImage.append(sliderBlockForAdding);
+  });
+};
 
 // Выбираем контейнер с табами
 const tabsContainer = document.querySelector('.portfolio__tabs-wrapper');
@@ -63,30 +103,22 @@ const showPopupImage = function (image) {
 const buttonShowNextImage = document.querySelector('.popup-image__arrow_next');
 const buttonShowPrevImage = document.querySelector('.popup-image__arrow_prev');
 
-buttonShowNextImage.addEventListener('click', () => {
-  showNextPopupImage();
-});
+/* buttonShowNextImage.addEventListener('click', () => {
+  console.log('Next Clicked!');;
+}); */
 
-buttonShowPrevImage.addEventListener('click', () => {
+/* buttonShowPrevImage.addEventListener('click', () => {
   console.log(('Prev clicked'));
-});
+}); */
 
 
-// Логика
-// (всегда) Определяем текущую картинку (ее номер в массиве)
-// Next
-// Меняем адрес и название на следующую в массиве
-// Если дошли до последней - меняем на первую
-// Prev
-// Меняем адрес и название на предыдущую в массиве
-// Если дошли до первой - меняем на последнюю
+
 
 const showNextPopupImage = function () {
-  const imagesArray = imagesContainer.querySelectorAll('.portfolio__image');
-
+  const pageImagesArray = imagesContainer.querySelectorAll('.portfolio__image');
+  /*  console.log(pageImagesArray.indexOf('penis')); */
+  /* console.log(pageImagesArray.indexOf('penis')); */
 };
-
-
 
 // Показ изображений по тегу
 const selectImagesFromPortfolio = function () {
@@ -142,9 +174,9 @@ buttonClosePopupForm.addEventListener('click', () => {
   togglePopup(popupForm);
 });
 
-buttonClosePopupImage.addEventListener('click', () => {
+/* buttonClosePopupImage.addEventListener('click', () => {
   togglePopup(popupImage);
-});
+}); */
 
 priceSection.addEventListener('click', (evt) => {
   if (evt.target.classList.contains('button_place_price')) {
