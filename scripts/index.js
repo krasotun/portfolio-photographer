@@ -26,6 +26,8 @@ const createPortfolioImage = function (name, link, alt) {
   return portfolioImage;
 };
 
+
+
 // Вставояем картинки из массива на сайт
 const firstAddImages = function () {
   imagesArray.forEach((item) => {
@@ -56,6 +58,35 @@ const showPopupImage = function (image) {
   popupImageImage.src = image.src;
   popupImageText.textContent = image.dataset.name;
 };
+
+// Переключаем картинку вперед
+const buttonShowNextImage = document.querySelector('.popup-image__arrow_next');
+const buttonShowPrevImage = document.querySelector('.popup-image__arrow_prev');
+
+buttonShowNextImage.addEventListener('click', () => {
+  showNextPopupImage();
+});
+
+buttonShowPrevImage.addEventListener('click', () => {
+  console.log(('Prev clicked'));
+});
+
+
+// Логика
+// (всегда) Определяем текущую картинку (ее номер в массиве)
+// Next
+// Меняем адрес и название на следующую в массиве
+// Если дошли до последней - меняем на первую
+// Prev
+// Меняем адрес и название на предыдущую в массиве
+// Если дошли до первой - меняем на последнюю
+
+const showNextPopupImage = function () {
+  const imagesArray = imagesContainer.querySelectorAll('.portfolio__image');
+
+};
+
+
 
 // Показ изображений по тегу
 const selectImagesFromPortfolio = function () {

@@ -1,0 +1,10 @@
+.popup-image__arrow {
+  width: 32px;
+  position: absolute;
+  top: 40%;
+
+  &:hover {
+    cursor: pointer;
+    opacity: .6;
+  }
+}
