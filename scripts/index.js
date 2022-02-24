@@ -4,7 +4,6 @@ const togglePopup = function (popupName) {
 };
 
 // Папап по клику на картинку
-
 const popupImage = document.querySelector('.popup-image');
 const popupImageImage = popupImage.querySelector('.popup-image__image');
 const popupImageText = popupImage.querySelector('.popup-image__text');
@@ -19,12 +18,6 @@ const createPortfolioImage = function (name, link, alt) {
   portfolioImage.src = link;
   portfolioImage.alt = alt;
   portfolioImage.classList.add('portfolio__image');
-  portfolioImage.addEventListener('click', () => {
-    createSliderBlock('Имя картинки', 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg',
-      'Альт картинки', 'Winter');
-    /* showPopupImage(portfolioImage); */
-    togglePopup(popupImage);
-  });
   return portfolioImage;
 };
 
@@ -37,9 +30,21 @@ const firstAddImages = function () {
 };
 firstAddImages();
 
+// Вставляем картинки в попап
+imagesContainer.addEventListener('click', (evt) => {
+  let clickedImage = evt.target;
+  if (clickedImage.classList.contains('portfolio__image')) {
+    togglePopup(popupImage);
+    hideAllPopupContent();
+    const imagesForPopup = imagesContainer.querySelectorAll('.portfolio__image');
+    imagesForPopup.forEach(image => {
+      createSliderBlock(image.dataset.name, image.src, image.alt, image.dataset.name);
+    });
+  }
+});
 // Слайдер
 // Логика
-// Вставляем в попап картинки из выбранного тега (копипуем с массивом)
+// (+) Вставляем в попап картинки из выбранного тега (копипуем с массивом)
 // Next
 // Тогглим класс hidded
 // Prev
@@ -57,22 +62,11 @@ const createSliderBlock = function (name, link, alt, data) {
   sliderBlockImage.src = link;
   sliderBlockImage.alt = alt;
   sliderBlockImage.dataset.name = data;
-  sliderBlockImage.classList.add('popup-image__image');
-  sliderBlockText.classList.add('popup-image__text');
+  sliderBlockImage.classList.add('popup-image__image', 'popup-image_hidden');
+  sliderBlockText.classList.add('popup-image__text', 'popup-image_hidden');
   popupImageContainer.append(sliderBlockImage);
   popupImageContainer.append(sliderBlockText);
 };
-
-
-// Вставляем блок с картинками в попап
-/* const addSliderBlock = function () {
-  imagesContainer.querySelectorAll('.portfolio__image').forEach(image => {
-
-    const sliderBlockForAdding = createSliderBlock(image.dataset.name, image.src, image.alt);
-
-    popupImageContainer.append(sliderBlockForAdding);
-  });
-}; */
 
 // Выбираем контейнер с табами
 const tabsContainer = document.querySelector('.portfolio__tabs-wrapper');
@@ -81,12 +75,22 @@ const tabsContainer = document.querySelector('.portfolio__tabs-wrapper');
 const portfolioTabs = tabsContainer.querySelectorAll('.tab');
 
 // Выбираем картинки из контейнера
-const portfolioImages = imagesContainer.querySelectorAll('.portfolio__image');
+const portfolioImages = document.querySelectorAll('.portfolio__image');
 
 // Скрываем все картинки на странице
 const hideAllImages = function () {
   imagesContainer.querySelectorAll('.portfolio__image').forEach(image => {
     image.remove();
+  });
+};
+
+// Скрываем все картинки в попапе
+const hideAllPopupContent = function () {
+  popupImageContainer.querySelectorAll('.popup-image__image').forEach(image => {
+    image.remove();
+  });
+  popupImageContainer.querySelectorAll('.popup-image__text').forEach(text => {
+    text.remove();
   });
 };
 
@@ -100,22 +104,21 @@ const showPopupImage = function (image) {
 const buttonShowNextImage = document.querySelector('.popup-image__arrow_next');
 const buttonShowPrevImage = document.querySelector('.popup-image__arrow_prev');
 
-/* buttonShowNextImage.addEventListener('click', () => {
+buttonShowNextImage.addEventListener('click', () => {
   console.log('Next Clicked!');;
-}); */
+});
 
-/* buttonShowPrevImage.addEventListener('click', () => {
+buttonShowPrevImage.addEventListener('click', () => {
   console.log(('Prev clicked'));
-}); */
-
-
-
+});
 
 const showNextPopupImage = function () {
-  const pageImagesArray = imagesContainer.querySelectorAll('.portfolio__image');
+  /*  const pageImagesArray = imagesContainer.querySelectorAll('.portfolio__image'); */
   /*  console.log(pageImagesArray.indexOf('penis')); */
   /* console.log(pageImagesArray.indexOf('penis')); */
 };
+
+
 
 // Показ изображений по тегу
 const selectImagesFromPortfolio = function () {
@@ -171,9 +174,9 @@ buttonClosePopupForm.addEventListener('click', () => {
   togglePopup(popupForm);
 });
 
-/* buttonClosePopupImage.addEventListener('click', () => {
+buttonClosePopupImage.addEventListener('click', () => {
   togglePopup(popupImage);
-}); */
+});
 
 priceSection.addEventListener('click', (evt) => {
   if (evt.target.classList.contains('button_place_price')) {
