@@ -40,16 +40,37 @@ imagesContainer.addEventListener('click', (evt) => {
     imagesForPopup.forEach(image => {
       createSliderBlock(image.dataset.name, image.src, image.alt, image.dataset.name);
     });
+    // Убираем hidden y Первой картинки и текста
+    const firstPopupImage = popupImageContainer.querySelector('.popup-image__image');
+    const firstPopupText = popupImageContainer.querySelector('.popup-image__text');
+    showPopupContent(firstPopupImage, firstPopupText);
+    // Переключаем картинку
+    const imagesFromPopup = popupImageContainer.querySelectorAll('.popup-image__image');
+    const textsFromPopup = popupImageContainer.querySelectorAll('.popup-image__text');
+    const buttonShowNextImage = document.querySelector('.popup-image__arrow_next');
+    const buttonShowPrevImage = document.querySelector('.popup-image__arrow_prev');
+    buttonShowNextImage.addEventListener('click', () => {
+      hidePopupContent(firstPopupImage, firstPopupText);
+
+    });
+    buttonShowPrevImage.addEventListener('click', () => {
+      console.log('Prev clicked');
+    });
   }
 });
-// Слайдер
-// Логика
-// (+) Вставляем в попап картинки из выбранного тега (копипуем с массивом)
-// Next
-// Тогглим класс hidded
-// Prev
-// Тогглим класс hidded
-// Если дошли до первой - меняем на последнюю
+
+// Показываем  блок из попапа
+const showPopupContent = function (image, text) {
+  image.classList.remove('popup-image_hidden');
+  text.classList.remove('popup-image_hidden');
+};
+
+// Скрываем  блок из попапа
+const hidePopupContent = function (image, text) {
+  image.classList.add('popup-image_hidden');
+  text.classList.add('popup-image_hidden');
+};
+
 
 // Выбираем контейнер для вставки
 const popupImageContainer = document.querySelector('.popup-image__container');
@@ -67,6 +88,19 @@ const createSliderBlock = function (name, link, alt, data) {
   popupImageContainer.append(sliderBlockImage);
   popupImageContainer.append(sliderBlockText);
 };
+// Слайдер
+// Логика
+// (+) Вставляем в попап картинки из выбранного тега (копипуем с массивом)
+// (+) Убираем у текущей картинки скрытые классы (показываем картинку)
+// Next
+// Тогглим класс hidded
+// Prev
+// Тогглим класс hidded
+// Если дошли до первой - меняем на последнюю
+
+
+
+
 
 // Выбираем контейнер с табами
 const tabsContainer = document.querySelector('.portfolio__tabs-wrapper');
@@ -100,23 +134,11 @@ const showPopupImage = function (image) {
   popupImageText.textContent = image.dataset.name;
 };
 
-// Переключаем картинку вперед
-const buttonShowNextImage = document.querySelector('.popup-image__arrow_next');
-const buttonShowPrevImage = document.querySelector('.popup-image__arrow_prev');
 
-buttonShowNextImage.addEventListener('click', () => {
-  console.log('Next Clicked!');;
-});
 
-buttonShowPrevImage.addEventListener('click', () => {
-  console.log(('Prev clicked'));
-});
 
-const showNextPopupImage = function () {
-  /*  const pageImagesArray = imagesContainer.querySelectorAll('.portfolio__image'); */
-  /*  console.log(pageImagesArray.indexOf('penis')); */
-  /* console.log(pageImagesArray.indexOf('penis')); */
-};
+
+
 
 
 
