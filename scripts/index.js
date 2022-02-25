@@ -40,18 +40,18 @@ imagesContainer.addEventListener('click', (evt) => {
     imagesForPopup.forEach(image => {
       createSliderBlock(image.dataset.name, image.src, image.alt, image.dataset.name);
     });
-    // Убираем hidden y Первой картинки и текста
-    const firstPopupImage = popupImageContainer.querySelector('.popup-image__image');
-    const firstPopupText = popupImageContainer.querySelector('.popup-image__text');
-    showPopupContent(firstPopupImage, firstPopupText);
-    // Переключаем картинку
-    const imagesFromPopup = popupImageContainer.querySelectorAll('.popup-image__image');
-    const textsFromPopup = popupImageContainer.querySelectorAll('.popup-image__text');
+
+    // Переключаем картинку в слайдере
+    const imagesForSlider = popupImageContainer.querySelectorAll('.popup-image__image');
+    const textsForSlider = popupImageContainer.querySelectorAll('.popup-image__text');
     const buttonShowNextImage = document.querySelector('.popup-image__arrow_next');
     const buttonShowPrevImage = document.querySelector('.popup-image__arrow_prev');
-    buttonShowNextImage.addEventListener('click', () => {
-      hidePopupContent(firstPopupImage, firstPopupText);
 
+    // Выводим первую картинку
+    let sliderIndex = 0;
+    showCurrentSlide(imagesForSlider[sliderIndex], textsForSlider[sliderIndex]);
+    buttonShowNextImage.addEventListener('click', () => {
+      console.log('Next clicked');
     });
     buttonShowPrevImage.addEventListener('click', () => {
       console.log('Prev clicked');
@@ -59,14 +59,14 @@ imagesContainer.addEventListener('click', (evt) => {
   }
 });
 
-// Показываем  блок из попапа
-const showPopupContent = function (image, text) {
+// Показываем  слайд
+const showCurrentSlide = function (image, text) {
   image.classList.remove('popup-image_hidden');
   text.classList.remove('popup-image_hidden');
 };
 
-// Скрываем  блок из попапа
-const hidePopupContent = function (image, text) {
+// Скрываем  слайд из попапа
+const hideCurrentSlide = function (image, text) {
   image.classList.add('popup-image_hidden');
   text.classList.add('popup-image_hidden');
 };
