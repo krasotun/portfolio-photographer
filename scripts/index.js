@@ -49,13 +49,10 @@ imagesContainer.addEventListener('click', (evt) => {
 
 
     // Ищем кликнутый элемент
-    // Создаем массив из псевдомассива
-    const arrayFromImagesforSlider = Array.from(imagesForSlider);
     const findStartingIndex = function () {
-      for (let clickedSlideIndex = 0; clickedSlideIndex <= arrayFromImagesforSlider.length; clickedSlideIndex++) {
-        if (clickedImage.src === arrayFromImagesforSlider[clickedSlideIndex].src) {
-          console.log(clickedSlideIndex);
-          return clickedSlideIndex
+      for (let clickedSlideIndex = 0; clickedSlideIndex <= imagesForSlider.length; clickedSlideIndex++) {
+        if (clickedImage.src === imagesForSlider[clickedSlideIndex].src) {
+          return clickedSlideIndex;
         }
       }
     };
@@ -91,7 +88,6 @@ imagesContainer.addEventListener('click', (evt) => {
         sliderIndex--;
       }
     };
-
     buttonShowNextImage.addEventListener('click', () => {
       showNextSlide();
     });
@@ -107,12 +103,11 @@ const showCurrentSlide = function (image, text) {
   text.classList.remove('popup-image_hidden');
 };
 
-// Скрываем  слайд из попапа
+// Скрываем  слайд
 const hideCurrentSlide = function (image, text) {
   image.classList.add('popup-image_hidden');
   text.classList.add('popup-image_hidden');
 };
-
 
 // Выбираем контейнер для вставки
 const popupImageContainer = document.querySelector('.popup-image__container');
@@ -130,19 +125,6 @@ const createSliderBlock = function (name, link, alt, data) {
   popupImageContainer.append(sliderBlockImage);
   popupImageContainer.append(sliderBlockText);
 };
-// Слайдер
-// Логика
-// (+) Вставляем в попап картинки из выбранного тега (копипуем с массивом)
-// (+) Убираем у текущей картинки скрытые классы (показываем картинку)
-// Next
-// Тогглим класс hidded
-// Prev
-// Тогглим класс hidded
-// Если дошли до первой - меняем на последнюю
-
-
-
-
 
 // Выбираем контейнер с табами
 const tabsContainer = document.querySelector('.portfolio__tabs-wrapper');
@@ -175,14 +157,6 @@ const showPopupImage = function (image) {
   popupImageImage.src = image.src;
   popupImageText.textContent = image.dataset.name;
 };
-
-
-
-
-
-
-
-
 
 // Показ изображений по тегу
 const selectImagesFromPortfolio = function () {
