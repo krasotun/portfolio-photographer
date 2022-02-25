@@ -41,20 +41,49 @@ imagesContainer.addEventListener('click', (evt) => {
       createSliderBlock(image.dataset.name, image.src, image.alt, image.dataset.name);
     });
 
-    // Переключаем картинку в слайдере
+    // Работа со слайдером
     const imagesForSlider = popupImageContainer.querySelectorAll('.popup-image__image');
     const textsForSlider = popupImageContainer.querySelectorAll('.popup-image__text');
     const buttonShowNextImage = document.querySelector('.popup-image__arrow_next');
     const buttonShowPrevImage = document.querySelector('.popup-image__arrow_prev');
 
-    // Выводим первую картинку
     let sliderIndex = 0;
+
+    // Выводим первую картинку
     showCurrentSlide(imagesForSlider[sliderIndex], textsForSlider[sliderIndex]);
+
+    // Функция для переключения картинки вперед
+    const showNextSlide = function () {
+      hideCurrentSlide(imagesForSlider[sliderIndex], textsForSlider[sliderIndex]);
+      if (sliderIndex == imagesForSlider.length - 1) {
+        sliderIndex = 0;
+        hideCurrentSlide(imagesForSlider[sliderIndex], textsForSlider[sliderIndex]);
+        showCurrentSlide(imagesForSlider[sliderIndex], textsForSlider[sliderIndex]);
+      } else {
+        hideCurrentSlide(imagesForSlider[sliderIndex], textsForSlider[sliderIndex]);
+        showCurrentSlide(imagesForSlider[sliderIndex + 1], textsForSlider[sliderIndex + 1]);
+        sliderIndex++;
+      }
+    };
+    // Функция для переключения картинки назад
+    const showPrevSlide = function () {
+      hideCurrentSlide(imagesForSlider[sliderIndex], textsForSlider[sliderIndex]);
+      if (sliderIndex == 0) {
+        sliderIndex = imagesForSlider.length - 1;
+        hideCurrentSlide(imagesForSlider[sliderIndex], textsForSlider[sliderIndex]);
+        showCurrentSlide(imagesForSlider[sliderIndex], textsForSlider[sliderIndex]);
+      } else {
+        hideCurrentSlide(imagesForSlider[sliderIndex], textsForSlider[sliderIndex]);
+        showCurrentSlide(imagesForSlider[sliderIndex - 1], textsForSlider[sliderIndex - 1]);
+        sliderIndex--;
+      }
+    };
+
     buttonShowNextImage.addEventListener('click', () => {
-      console.log('Next clicked');
+      showNextSlide();
     });
     buttonShowPrevImage.addEventListener('click', () => {
-      console.log('Prev clicked');
+      showPrevSlide();
     });
   }
 });
