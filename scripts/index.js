@@ -47,7 +47,20 @@ imagesContainer.addEventListener('click', (evt) => {
     const buttonShowNextImage = document.querySelector('.popup-image__arrow_next');
     const buttonShowPrevImage = document.querySelector('.popup-image__arrow_prev');
 
-    let sliderIndex = 0;
+
+    // Ищем кликнутый элемент
+    // Создаем массив из псевдомассива
+    const arrayFromImagesforSlider = Array.from(imagesForSlider);
+    const findStartingIndex = function () {
+      for (let clickedSlideIndex = 0; clickedSlideIndex <= arrayFromImagesforSlider.length; clickedSlideIndex++) {
+        if (clickedImage.src === arrayFromImagesforSlider[clickedSlideIndex].src) {
+          console.log(clickedSlideIndex);
+          return clickedSlideIndex
+        }
+      }
+    };
+    // Задаем индекс начального слайда
+    let sliderIndex = findStartingIndex();
 
     // Выводим первую картинку
     showCurrentSlide(imagesForSlider[sliderIndex], textsForSlider[sliderIndex]);
